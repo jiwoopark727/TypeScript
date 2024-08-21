@@ -1,3 +1,10 @@
-export default function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+import Example from './components/example/Example'
+
+const App = () => {
+  return (
+    <>
+      <Example/>
+    </>
+  )
 }
+export default App
