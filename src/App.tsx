@@ -1,11 +1,26 @@
 import UserCard from './components/study/UserCard'
 
 const App = () => {
+  const onClickHandler = (name:string, age:number, gender: string) => {
+    alert(`${name}, ${age}, ${gender === "male" ? "남자" : "여자"}`);
+  }
   return (
     <div>
-      <UserCard name='철수' age={19} gender={"female"}/>
-      <UserCard name='영희' age={19} gender={"male"}/>
-      <UserCard name='바둑이' age={10} gender={"male"}/>
+      <UserCard 
+        name='철수'
+        age={19}
+        gender={"male"}
+        onClickHandler = {onClickHandler}/>
+      <UserCard
+        name='영희'
+        age={19}
+        gender={"female"}
+        onClickHandler = {onClickHandler}/>
+      <UserCard
+        name='바둑이'
+        age={10}
+        gender={"male"}
+        onClickHandler = {onClickHandler}/>
       {/* 아래처럼 표현식을 써도 무방
       <Greeting name={"철수"}/>
       <Greeting name={"영희"}/>
@@ -25,3 +40,6 @@ export default App
 
 
 //UserCard.tsx에서 여러 개의 props 전달하는 거 해봄
+
+//이벤트 전달
+//props로 이벤트(함수)도 전달 가능
